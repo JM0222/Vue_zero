@@ -1,0 +1,33 @@
+Component -> 반복되는 부분을 하나의 컴포넌트로 만들수있다.
+컴포넌트에서는 data를 함수형태로 만들어야한다.
+templates 에는 div 부모로 가져야한다.
+컴포넌트는 인스턴스보다는 위에 있어야한다.
+<div id="root">
+    <wordRelay></wordRelay>
+    <wordRelay></wordRelay>
+    <wordRelay></wordRelay>
+</div>
+
+Vue.component('wordRelay', {
+        template: `
+            <div>{{word}}</div>
+            <form v-on:submit = "onSubmitForm">
+                <input type="text" ref="answer" v-model="value">
+                <button type="submit">입력</button>
+            </form>
+            <div>{{result}}</div>
+        `, 
+        data:{},
+        methods:{},
+    })
+props를통해 각각 다르게 변형해서 컴포넌트 사용가능
+    <word-relay start-word="제로초"></word-relay>
+    <word-relay start-word="초밥"></word-relay>
+    <word-relay start-word="바보"></word-relay>
+    props: ['startWord'],
+        data() {
+            return {
+            word: this.startWord,
+            result: '',
+            value: '',
+            };

@@ -1,0 +1,21 @@
+vue 
+
+중요한점  - 바뀌는 부분을 잘 체크해야한다.
+            데이터만 바꿔도 화면수정은 Vue가알아서해준다.
+            (화면과 데이터를 일치시키는게중요)
+	    데이터중심 생각 *
+
+el, data, methods 는 이름 지켜줘야한다.
+
+중괄호 2번 = > 렌더링가능
+<div>{{first}}곱하기 {{second}}는?</div>
+
+vue 에서 input 에서 value 값 받아올떄는 model 을 사용
+input 값을 사용하고싶다 -> v-model 
+
+ref 사용하기 (남용 X)
+<input type="number" ref="answer" v-model="value">
+
+methods:{
+	this.$refs.answer.focus();
+}

@@ -1,0 +1,32 @@
+사용디렉터리
+-npm init => package.json 파일이 생긴다
+소스코드 버전관리를 위해 사용한다
+npm i vue
+npm i webpack webpack-cli -D  개발환경에서만 
+
+webpack =>
+     webpack.config.js -> 
+        module.exports = {
+            entry:{
+                app: './main.js',
+
+            },
+            module:{
+                rules: [{
+
+                }],
+            },
+            plugins: [],
+            output:{
+                filename: 'app.js',
+                path: './dist',
+            },
+        };
+entry -> output => rules 에서 이상한거 처리 => plugins 에서 후처리(한번더 가공)
+src main.js 하나만 링크시키면된다.
+npm i vue-template-compiler -D
+npm i vue@2.8.0 <@ 특정버전 다운로드시 이용
+
+bulid 자동으로 돌리기
+
+webpack -> 어떤파일이던지 상관없이 하나로 합친다 rules에서 추가

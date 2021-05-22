@@ -1,0 +1,38 @@
+package.json 에서 
+webpack --watch 코드수정될땜마다 웹팩 자동빌드
+
+npm i -D webpack-dev-server  위에거보다 성능 up
+output에서도 publicPath 까지 추가
+
+json 에서 추가 
+dev : ---
+v-vind:class      -> :class 
+v-on  ->  @  
+
+
+style 추가시 loader 추가해야한다
+npm i vue-style-loader
+npm i css-loader -D
+
+config.js 수정
+
+test: /\.css$/,
+            use: [    // loader == uses
+                'vue-style-loader',
+                'css-loader'
+            ]
+
+<style scoped> // css 범위제한 
+
+computed  
+-데이터 가공사용시 사용한다 
+why ? 사용이유 
+- 캐싱이 된다(성능상)
+템플릿 내 계산은 computed에서 처리해주는것이 좋다.
+
+v-show vs v-if
+ 레이아웃 영향줄수있다.
+v-show는 display:none 처리(태그가 있다)
+v-if 는 태그자체가 존재X
+
+template 는 없다고 생각하면된다 .(서로 관계 정의시 사용)
